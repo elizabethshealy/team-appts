@@ -1,0 +1,20 @@
+body {
+  background-color: pink;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  color: #EEE;
+  background-color: seagreen;
+  overflow: hidden;
+  padding: 1em;
+}
+
+.add-app {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
