@@ -1,3 +1,7 @@
+/**************************************
+Global Elements
+**************************************/
+
 body {
   background-color: pink;
 }
@@ -5,6 +9,10 @@ body {
 a {
   text-decoration: none;
 }
+
+/**************************************
+Header
+**************************************/
 
 header {
   color: #EEE;
@@ -17,4 +25,33 @@ header {
   position: absolute;
   right: 1em;
   top: 1em;
+}
+
+/**************************************
+Appt Info
+**************************************/
+
+.newappointment {
+  display: block;
+  width: 25em;
+  margin: auto;
+  padding-top: 3em;
+}
+
+.newappointment button {
+  width: 7em;
+  height: 2em;
+  display: block;
+}
+
+label, input {
+  display: block;
+  height: 3em;
+  width: 24em;
+}
+
+label {
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
 }

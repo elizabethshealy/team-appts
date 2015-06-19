@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Team Appointments</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
     <link href="css/reset.css" rel = "stylesheet">
     <link href="css/style.css" rel = "stylesheet">
 </head>
@@ -10,6 +11,49 @@
     <h1>Appointments</h1>
     <a class = "add-app" href ="#">+</a>
   </header>
+
+  <script type = 'text/underscore-min' id = 'appointment-details'>
+    <ul class = "list">
+      <li class = "title"><%- m.title %></li>
+      <li class = "date"><%- m.date %></li>
+      <li class = "time"><%- m.time %></li>
+      <li class = "street"><%- m.street %></li>
+      <li class = "city"><%- m.city %></li>
+      <li class = "state"><%- m.state %></li>
+    </ul>
+    <button type = "submit" name="button">
+  </script>
+
+  <!-- // <script type = 'text/underscore-min' id = 'new-appointment'> -->
+    <form class = "newappointment">
+      <label>
+        Title
+        <input type = "text">
+      </label>
+      <label>
+        Date
+        <input type = "text">
+      </label>
+      <label>
+        Time
+        <input type = "text">
+      </label>
+      <label>
+        Street
+        <input type = "text">
+      </label>
+      <label>
+        City
+        <input type = "text">
+      </label>
+      <label>
+        State
+        <input type = "text">
+      </label>
+      <button type = "submit" name = "button">Submit</button>
+    </form>
+  <!-- </script> -->
+
 
 
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
