@@ -3,7 +3,7 @@ Global Elements
 **************************************/
 
 body {
-  background-color: pink;
+  background-color: #e4dbd1;
 }
 
 a {
@@ -15,30 +15,33 @@ Header
 **************************************/
 
 header {
-  color: #EEE;
-  background-color: seagreen;
+  color: #354458;
+  background-color: #eb7260;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 25pt;
   overflow: hidden;
-  padding: 1em;
+  padding: .75em;
+  text-align: center;
 }
 
 .add-app {
   position: absolute;
   right: 1em;
-  top: 1em;
+  top: .75em;
 }
 
 /**************************************
 Appt Info
 **************************************/
 
-.newappointment {
+.new-appt {
   display: block;
-  width: 25em;
+  max-width: 17em;
   margin: auto;
-  padding-top: 3em;
+  padding: 3em;
 }
 
-.newappointment button {
+.new-appt button {
   width: 7em;
   height: 2em;
   display: block;
@@ -48,10 +51,12 @@ label, input {
   display: block;
   height: 3em;
   width: 24em;
+  text-align: center;
 }
 
 label {
   margin-bottom: 20px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 19pt;
   text-align: center;
 }

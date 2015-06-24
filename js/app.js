@@ -1,52 +1,72 @@
 var app = {};
 
+var data = [];
+
   var Router = Backbone.Router.extend({
   routes:{
          '':'home',
          'new':'new',
-         'detail':'detail',
+         'detail/:id':'detail',
          'edit/:id':'edit',
        },
 
-       home: function(){
+      home: function(){
          //myHomeFunction()
-         $('.main-content').html($('#create-appt').html());
+
+         //Function that pulls in template "all-appts" into the HTML and passes it variable M
+         var compiled = _.template($('#all-appts').html(), {variable: 'm'});
+         //Takes the complied array and displays it in the Main Content div
+         $('.main-content').html(compiled(data));
         },
 
-        new: function(){
-          $('.main-content').html($('#create-appt').html());
-          $('.new-appt').on('submit', function (e) {
-            e.preventDefault();
+      new: function(){
+        //displays form
+        $('.main-content').html($('#create-appt').html());
+        $(".date").pickadate({
+          format: "mm/dd/yyyy"
+        });
+        $(".time").pickatime({
+          interval: 30,
+          format: 'h:i A',
+        });
+        $('.new-appt').on('submit', function (e) {
+          e.preventDefault();
 
-            var appt = {};
+          var appt = {};
 
-            appt.title = $('.title').val();
-            appt.date = $('.date').val();
-            appt.time = $('.time').val();
-            appt.street = $('.street').val();
-            appt.city = $('.city').val();
-            appt.state = $('.state').val();
+          appt.title = $('.title').val();
+          appt.date = $('.date').val();
+          appt.time = $('.time').val();
+          appt.street = $('.street').val();
+          appt.city = $('.city').val();
+          appt.state = $('.state').val();
 
-            console.log(appt);
+          data.push(appt);
+          console.log (data);
+
+          // this.navigate('#all-appts', true);
+          window.location.hash = '';
+          // app.instance.goto(view);
+
           })
         },
 
-        detail: function(){
-          $('.main-content').html($('#detail').html());
+      detail: function(id){
+        $('.main-content').html($('#detail').html());
 
 
-        },
+      },
 
-        edit: function(id){
-                $('.main-content').html($('#create-appt').html());
+      edit: function(id){
+        $('.main-content').html($('#create-appt').html());
                 // alert("Put templates Here??" + id);
-              },
+          },
         });
 
 
-            var app_router = new Router();
-            // app_router.on("route:new", function(){
-            //   alert("Put templates Here??");
-            // });
+var app_router = new Router();
+  // app_router.on("route:new", function(){
+  //   alert("Put templates Here??");
+  // });
 
-            Backbone.history.start();
+Backbone.history.start();

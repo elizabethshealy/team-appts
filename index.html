@@ -2,10 +2,13 @@
 <html>
   <head>
     <title>Team Appointments</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link href="css/reset.css" rel = "stylesheet">
     <link href="css/styles.css" rel = "stylesheet">
-</head>
+    <link href="js/pickadate.js-3.5.6/lib/compressed/themes/default.css" rel = "stylesheet">
+    <link href="js/pickadate.js-3.5.6/lib/compressed/themes/default.time.css" rel = "stylesheet">
+    <link href="js/pickadate.js-3.5.6/lib/compressed/themes/default.date.css" rel = "stylesheet">
+  </head>
 
 <body>
   <header>
@@ -17,44 +20,32 @@
     <h1>Loading...</h1>
   </div>
 
-  <script type = 'text/underscore-min' id = 'appointment-details'>
+  <script type = 'text/template' id = 'all-appts'>
+    <% m.forEach(function(appt,i) {  %>
     <ul class = "list">
-      <li class = "title"><%- m.title %></li>
-      <li class = "date"><%- m.date %></li>
-      <li class = "time"><%- m.time %></li>
-      <li class = "street"><%- m.street %></li>
-      <li class = "city"><%- m.city %></li>
-      <li class = "state"><%- m.state %></li>
+      <li class = "title"> <a href = "#detail/<%- i %>"><%- appt.title %> </a> </li>
+      <li class = "date"><%- appt.date %></li>
+      <li class = "time"><%- appt.time %></li>
+      <li class = "street"><%- appt.street %></li>
+      <li class = "city"><%- appt.city %></li>
+      <li class = "state"><%- appt.state %></li>
     </ul>
-    <button type = "submit" name="button">
+    <% }) %>
   </script>
 
-<script type = 'text/template' id = 'create-appt'>
-    <form class = "new-appt" action = "index.html" method = "post">
-      <label>
-        Title
-        <input type = "text" class="title">
-      </label>
-      <label>
-        Date
-        <input type = "text" class="date">
-      </label>
-      <label>
-        Time
-        <input type = "text" class="time">
-      </label>
-      <label>
-        Street
-        <input type = "text" class="street">
-      </label>
-      <label>
-        City
-        <input type = "text" class="city">
-      </label>
-      <label>
-        State
-        <input type = "text" class="state">
-      </label>
+  <script type = 'text/template' id = 'details'>
+    <h1> This is a test.<h1>
+  </script>
+
+<script type='text/template' id = 'create-appt'>
+    <form class = "new-appt" action = "" method = "post">
+      <input type = "text" class="title" placeholder = "Title" </br>
+      <input type = "text" class ="date" placeholder = "Date" </br>
+      <input type = "text" class="time" placeholder = "Time" </br>
+      <input type = "text" class="time" placeholder = "Street" </br>
+      <input type = "text" class="street" placeholder = "City" </br>
+      <input type = "text" class="city" placeholder = "State" </br>
+      <input type = "text" class="state" placeholder = "Zipcode" </br>
       <button type = "submit" class = "add-button" name = "button">Submit</button>
     </form>
   <!-- </script> -->
@@ -62,9 +53,11 @@
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src = "https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
+  <script src = "js/pickadate.js-3.5.6/lib/picker.js"></script>
+  <script src = "js/pickadate.js-3.5.6/lib/picker.date.js"></script>
+  <script src = "js/pickadate.js-3.5.6/lib/picker.time.js"></script>
   <script src = "js/views/home.js" type = "text-javascript"></script>
   <script src = "js/app.js" type = "text/javascript"></script>
-
 </body>
 
 </html>

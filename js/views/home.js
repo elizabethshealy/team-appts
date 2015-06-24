@@ -9,4 +9,9 @@ var HomeView = Backbone.View.extend({
   render: function(){
     $('div').html("<%- m.title %>");
   }
-}); 
+
+  // $(".date").pickadate();
+
+});
+
+// $(".date").pickadate();
