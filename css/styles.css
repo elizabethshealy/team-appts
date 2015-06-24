@@ -32,32 +32,54 @@ header {
 }
 
 /**************************************
-Appt Info
+Add new appt
 **************************************/
 
 .new-appt {
   display: block;
-  max-width: 17em;
+  max-width: 25em;
   margin: auto;
   padding: 3em;
 }
 
-.new-appt button {
-  width: 7em;
-  height: 2em;
+input {
   display: block;
-}
-
-label, input {
-  display: block;
-  height: 3em;
-  width: 24em;
+  height: 2.5em;
+  width: 20em;
   text-align: center;
 }
 
-label {
+input {
   margin-bottom: 20px;
   font-family: 'Architects Daughter', cursive;
-  font-size: 19pt;
+  font-size: 14pt;
   text-align: center;
+}
+
+.save {
+  margin: auto;
+  text-decoration: none;
+  color: #FFF;
+  border-radius: 5px;
+  border: 2px solid HSLA(256, 12%, 82%, 1);
+  background-color: #56b7b1;
+}
+
+.save:hover {
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  background-color: #29aba4;
+}
+
+/**************************************
+Show all appts
+**************************************/
+
+.list {
+  background-color: white;
+  border: 2px solid HSLA(256, 12%, 82%, 1);
+  text-align: center;
+  font-family: 'Architects Daughter', cursive;
 }
