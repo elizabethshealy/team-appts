@@ -22,6 +22,7 @@ header {
   overflow: hidden;
   padding: .75em;
   text-align: center;
+  box-shadow: 0 -1px 9px 1px HSLA(256, 12%, 22%, 1);
 }
 
 .add-app {
