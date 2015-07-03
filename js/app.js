@@ -43,9 +43,11 @@ var data = [];
 
           data.push(appt);
           console.log (data);
+          localStorage.setItem('appt', JSON.stringify(this.all));
 
           // this.navigate('#all-appts', true);
           window.location.hash = '';
+          this.all = JSON.parse(localStorage.getItem('appt'))
           // app.instance.goto(view);
 
           })
@@ -58,8 +60,11 @@ var data = [];
       },
 
       edit: function(id){
-        $('.main-content').html($('#create-appt').html());
-                // alert("Put templates Here??" + id);
+        // $('.main-content').html($('#create-appt').html());
+        var getappt = app.apps.getByTitle(title);
+        console.log(getappt);
+        app.show('edit-appointment', appt);
+          
           },
         });
 
